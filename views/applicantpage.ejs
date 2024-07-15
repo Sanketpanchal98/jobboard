@@ -1,0 +1,31 @@
+<%- include("partials/header") %> 
+
+<a href="/profile" class="p-2 text-4xl absolute hover:bg-zinc-200 rounded-full"><i class="ri-arrow-left-line"></i></a>
+
+<div class=" ">
+
+    <% job.appliedby.forEach((e)=>{ %>
+    <div class="flex">
+      <div class="h-screen w-1/2 flex flex-col justify-center items-center gap-20">
+        
+        <p>Name : <%= e.name %> </p> 
+        <p>Education : 
+        <%= e.eduaction %> </p>
+        <p>Email : 
+        <%= e.email %> </p>
+        <p>Skills : 
+        <%= e.skills %></p>
+        <p>About : <%= e.about %></p>
+      </div>
+      
+      <div class="h-screen w-1/2 justify-center items-center flex flex-col">
+          <p>resume: </p>
+          <img src="/images/uploads/<%= e.resume %>" alt="NA">
+      </div>
+    </div>
+    <a href="/approve/<%= e._id %>" class="bg-zinc-500 text-white left-2/4 absolute  p-2 rounded-2xl">Approve Application</a>
+    <a href="/reject/<%= e._id %>" class="bg-red-500 right-2/4 ml-5 text-white absolute p-2 rounded-2xl ">Reject Application</a>
+    <%})%> 
+</div>
+<%- include('partials/footer') %>
+

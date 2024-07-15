@@ -1,0 +1,52 @@
+<%- include('partials/header') %>
+
+<a href="/profile" class="p-2 text-4xl absolute hover:bg-zinc-200 rounded-full"><i class="ri-arrow-left-line"></i></a>
+
+
+<form
+  id="createjob"
+  action="/edit"
+  method="post"
+  class="flex gap-7 w-full mt-20 flex-col items-center  h-[400px]"
+>
+  <div class="flex gap-7 items-center w-full justify-center mt-10">
+    <input
+      type="text"
+      name="title"
+      placeholder="title"
+      class="border-2 rounded-xl h-[40px] p-2 w-2/4" value="<%=job.title%>"
+    />
+    <label for="title">name the job</label>
+  </div>
+
+  <div class="items-center flex gap-7 justify-center w-full mt-10">
+    <textarea
+      name="dec"
+      id=""
+      class="p-2 w-2/4 border-2 rounded-xl h-[90px]"
+      placeholder="Decsription" 
+    ><%=job.description%></textarea>
+    <label for="dec">Give the description</label>
+  </div>
+
+  <div class="flex gap-7 items-center justify-center w-full mt-10">
+    <select
+      name="eligibility"
+      id=""
+      class="border-2 rounded-xl h-[40px] p-2 w-2/4" value="<%=job.eligibility%>"
+    >
+      <option value="Any">Any</option>
+      <option value="Enginner">Enginner</option>
+      <option value="Diploma">Diploma</option>
+      <option value="Bsc">Bsc</option>
+    </select>
+    <label for="eligibility" class="">Eligibility for the jobs</label>
+  </div>
+
+  <button type="submit" class="bg-zinc-500 hover:bg-zinc-400 p-2 rounded-xl text-white">Save</button>
+
+</form>
+
+<a href="/delete/<%= job._id %>" class="bg-zinc-500 hover:bg-zinc-400 text-white p-2 rounded-xl absolute right-1/2 mt-10">Delete</a>
+
+<%- include('partials/footer') %>
