@@ -1,2 +1,3 @@
 # jobboard
- A job board application using Node.ja
+ A job board application using Node.js
+ This is fully functional website.
